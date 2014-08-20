@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIButton *stopButton;
 @property (nonatomic, strong) UIButton *tiltUpButton;
 @property (nonatomic, strong) UIButton *tiltDownButton;
+@property (nonatomic, strong) UILabel *ipAddressLabel;
 
 @property (nonatomic, strong) UIView *unconnectedView;
 

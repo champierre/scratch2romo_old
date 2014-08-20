@@ -37,6 +37,11 @@
     [RMCore setDelegate:self];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    NSLog(@"viewDidAppear");
+    [super viewDidAppear:animated];
+}
 
 #pragma mark -- RMCoreDelegate Methods --
 
@@ -113,8 +118,6 @@
     [self.session startRunning];
 }
 
-
-
 #pragma mark -- Private Methods: Build the UI --
 
 - (void)layoutForConnected
@@ -130,6 +133,9 @@
         [self.stopButton addTarget:self action:@selector(didTouchStopButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.connectedView addSubview:self.stopButton];
         
+        self.ipAddressLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 120, 240, 60)];
+        [self.connectedView addSubview:self.ipAddressLabel];
+
 //        self.tiltDownButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //        self.tiltDownButton.frame = CGRectMake(80, 130, 80, 60);
 //        [self.tiltDownButton setTitle:@"下を向く" forState:UIControlStateNormal];

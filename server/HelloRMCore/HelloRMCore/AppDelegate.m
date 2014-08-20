@@ -8,6 +8,8 @@
 #import "HTTPServer.h"
 #import "MyHTTPConnection.h"
 #import "iConsole.h"
+#include <ifaddrs.h>
+#include <arpa/inet.h>
 
 @interface AppDelegate ()
 
@@ -40,6 +42,7 @@
     self.httpServer.documentRoot = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"];
     [self.httpServer setConnectionClass:[MyHTTPConnection class]];
     [self startServer];
+    [self getIPAddress];
     
     return YES;
 }
@@ -61,6 +64,7 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     [self startServer];
+    [self getIPAddress];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -97,6 +101,38 @@
 {
     NSLog(@"stopServer");
     [self.httpServer stop];
+}
+
+- (void)getIPAddress
+{
+    NSLog(@"getIPAddress");
+    NSString *address = @"N/A";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while (temp_addr != NULL) {
+            if( temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if ([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    self.viewController.ipAddressLabel.text = [NSString stringWithFormat:@"wifi address: %@", address];
 }
 
 @end
