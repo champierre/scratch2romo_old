@@ -36,7 +36,7 @@
     [self.window makeKeyAndVisible];
     
     self.httpServer = [HTTPServer new];
-    self.httpServer.port = 5000;
+    self.httpServer.port = 80;
     self.httpServer.documentRoot = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"htdocs"];
     [self.httpServer setConnectionClass:[MyHTTPConnection class]];
     [self startServer];

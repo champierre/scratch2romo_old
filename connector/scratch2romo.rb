@@ -25,7 +25,7 @@ class PrintRSC < RSCWatcher
   end
 
   def host=(value)
-    @root_url = "http://#{value}:5000"
+    @root_url = "http://#{value}"
   end
   
   def on_sensor_update(name, value) # when a variable or sensor is updated
