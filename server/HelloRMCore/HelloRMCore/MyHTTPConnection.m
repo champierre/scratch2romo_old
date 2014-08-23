@@ -12,6 +12,7 @@
     
     NSArray *segments = [path componentsSeparatedByString:@"/"];
     NSString *action = segments[1];
+    NSString *angle = @"30";
 
     NSLog(@"path: %@", path);
     if ([action isEqualToString:@"up"])
@@ -28,11 +29,15 @@
         [app.viewController backward];
     } else if ([action isEqualToString:@"right"])
     {
-        NSString *angle = segments[2];
+        if ([segments count] > 2) {
+          angle = segments[2];
+        }
         [app.viewController rightWithAngle:angle];
     } else if ([action isEqualToString:@"left"])
     {
-        NSString *angle = segments[2];
+        if ([segments count] > 2) {
+            angle = segments[2];
+        }
         [app.viewController leftWithAngle:angle];
     } else if ([action isEqualToString:@"takePhoto"])
     {

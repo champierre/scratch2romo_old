@@ -67,7 +67,6 @@
     }
 }
 
-
 #pragma mark -- IBAction Methods --
 
 - (void)didTouchStopButton:(UIButton *)sender
@@ -82,40 +81,7 @@
         [self.Romo3 stopDriving];
         
         [sender setTitle:@"停止" forState:UIControlStateNormal];
-        
     }
-}
-
-- (void)setupAVCapture
-{
-    NSError *error = nil;
-    
-    // 入力と出力からキャプチャーセッションを作成
-    self.session = [[AVCaptureSession alloc] init];
-    
-    // 正面に配置されているカメラを取得
-    AVCaptureDevice *camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    // カメラからの入力を作成し、セッションに追加
-    self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:camera error:&error];
-    [self.session addInput:self.videoInput];
-    
-    // 画像への出力を作成し、セッションに追加
-    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    [self.session addOutput:self.stillImageOutput];
-    
-    // キャプチャーセッションから入力のプレビュー表示を作成
-//    AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-//    captureVideoPreviewLayer.frame = self.view.bounds;
-//    captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-//    
-//    // レイヤーをViewに設定
-//    CALayer *previewLayer = self.previewView.layer;
-//    previewLayer.masksToBounds = YES;
-//    [previewLayer addSublayer:captureVideoPreviewLayer];
-    
-    // セッション開始
-    [self.session startRunning];
 }
 
 #pragma mark -- Private Methods: Build the UI --
@@ -172,6 +138,40 @@
     [self.view addSubview:self.unconnectedView];
 }
 
+#pragma mark -- Other Methods --
+
+- (AVCaptureDevice *)frontCamera {
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    for (AVCaptureDevice *device in devices) {
+        if ([device position] == AVCaptureDevicePositionFront) {
+            return device;
+        }
+    }
+    return nil;
+}
+
+- (void)setupAVCapture
+{
+    NSError *error = nil;
+    
+    // 入力と出力からキャプチャーセッションを作成
+    self.session = [[AVCaptureSession alloc] init];
+    
+    // 正面に配置されているカメラを取得
+//    AVCaptureDevice *camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *camera = [self frontCamera];
+    
+    // カメラからの入力を作成し、セッションに追加
+    self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:camera error:&error];
+    [self.session addInput:self.videoInput];
+    
+    // 画像への出力を作成し、セッションに追加
+    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    [self.session addOutput:self.stillImageOutput];
+    
+    // セッション開始
+    [self.session startRunning];
+}
 
 - (void)forward {
     
@@ -282,8 +282,6 @@
         // Give Romo the drive command
         [self.Romo3 turnByAngle:floatAngle withRadius:radius completion:nil];
     }
-    
-
 }
 
 - (void)leftWithAngle: (NSString *) angle

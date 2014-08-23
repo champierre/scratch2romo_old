@@ -2,9 +2,28 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>Scratch2Romo</title>
+    <title>Romocon</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="jquery.mobile-1.4.3.min.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.3.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <strong>Scratch2Romo</strong>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Romocon</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <button class="ui-btn ui-icon-arrow-u ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/forward');return false;">forward</button>
+            <button class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/right');return false;">right</button>
+            <button class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/left');return false;">left</button>
+            <button class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/backward');return false;">backward</button>
+            <button class="ui-btn ui-icon-carat-u ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/up');return false;">up</button>
+            <button class="ui-btn ui-icon-carat-d ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/down');return false;">down</button>
+            <button class="ui-btn ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/takePhoto');return false;">takePhoto</button>
+            <button class="ui-btn ui-icon-eye ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/turnLightOn');return false;">turnLightOn</button>
+            <button class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/turnLightOff');return false;">turnLightOff</button>
+        </div>
+    </div>
 </body>
 </html>
