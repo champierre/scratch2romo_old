@@ -13,5 +13,5 @@ $ sudo gem install httpclient
 
 ```
 $ cd scratch2romo/connector
-$ ruby scratch2romo <IP address of iPhone>
+$ ruby scratch2romo.rb <IP address of iPhone>
 ```
