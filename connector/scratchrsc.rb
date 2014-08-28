@@ -3,6 +3,7 @@ require "scanf"
 
 class RSCWatcher
   def initialize(host="127.0.0.1")
+    puts host
     @socket = TCPSocket.open(host, 42001)
     onConnect
   end
