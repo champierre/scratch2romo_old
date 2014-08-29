@@ -7,8 +7,8 @@ require "httpclient"
 
 class PrintRSC < RSCWatcher
 
-  def initialize
-    super
+  def initialize(scratch_host = "127.0.0.1")
+    super(scratch_host)
 
     @client = HTTPClient.new
     broadcast "forward"
@@ -84,12 +84,13 @@ class PrintRSC < RSCWatcher
 end
 
 host = ARGV[0]
+scratch_host = ARGV[1]
 if host.nil?
-  puts "please input host address like 'ruby scratch2romo.rb 10.0.1.5'"
+  puts "Usage: ruby scratch2romo.rb [iPhone IP address] [Scratch host address(default is 127.0.0.1)]"
   exit
 end
 
-watcher = PrintRSC.new # you can provide the host as an argument
+watcher = scratch_host ? PrintRSC.new(scratch_host) : PrintRSC.new # you can provide the host as an argument
 watcher.host = host
 watcher.sensor_update "connected", "1"
 loop { watcher.handle_command }
