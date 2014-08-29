@@ -6,6 +6,7 @@
 #import "ViewController.h"
 #import "iConsole.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioServices.h>
 
 @interface ViewController ()
 
@@ -349,6 +350,11 @@
             [device unlockForConfiguration];
         }
     }
+}
+
+-(void)vibrate
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 @end

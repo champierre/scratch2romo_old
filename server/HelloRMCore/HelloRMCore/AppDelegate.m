@@ -63,8 +63,8 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [self startServer];
     [self getIPAddress];
+    [self startServer];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -74,7 +74,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 

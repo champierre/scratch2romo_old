@@ -48,6 +48,9 @@
     } else if ([action isEqualToString:@"turnLightOff"])
     {
         [app.viewController turnTorch:NO];
+    } else if ([action isEqualToString:@"vibrate"])
+    {
+        [app.viewController vibrate];
     }
 	return [super httpResponseForMethod:method URI:path];
 }

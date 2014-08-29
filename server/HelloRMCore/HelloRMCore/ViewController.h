@@ -32,4 +32,5 @@
 - (void)leftWithAngle: (NSString *) angle;
 - (void)takePhoto;
 - (void)turnTorch: (bool) on;
+- (void)vibrate;
 @end

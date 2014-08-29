@@ -12,6 +12,7 @@
 		6689B98519A4D35700970387 /* RMCharacter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689B98419A4D35700970387 /* RMCharacter.framework */; };
 		6689B98719A4D38800970387 /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689B98619A4D38800970387 /* RMCore.framework */; };
 		6689B98A19A8BF7A00970387 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6689B98919A8BF7A00970387 /* Icon.png */; };
+		6689B98C19B0D17500970387 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6689B98B19B0D17500970387 /* AudioToolbox.framework */; };
 		66BA941F195EF8AB0084B0F7 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA93FA195EF8AB0084B0F7 /* DDData.m */; };
 		66BA9420195EF8AB0084B0F7 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA93FC195EF8AB0084B0F7 /* DDNumber.m */; };
 		66BA9421195EF8AB0084B0F7 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA93FE195EF8AB0084B0F7 /* DDRange.m */; };
@@ -66,6 +67,7 @@
 		6689B98419A4D35700970387 /* RMCharacter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RMCharacter.framework; path = frameworks/RMCharacter.framework; sourceTree = "<group>"; };
 		6689B98619A4D38800970387 /* RMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RMCore.framework; path = frameworks/RMCore.framework; sourceTree = "<group>"; };
 		6689B98919A8BF7A00970387 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		6689B98B19B0D17500970387 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		66BA93E0195EF0510084B0F7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		66BA93E2195EF0610084B0F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		66BA93F9195EF8AB0084B0F7 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6689B98C19B0D17500970387 /* AudioToolbox.framework in Frameworks */,
 				6689B98719A4D38800970387 /* RMCore.framework in Frameworks */,
 				6689B98519A4D35700970387 /* RMCharacter.framework in Frameworks */,
 				6625DC6F1960162700321DA4 /* AVFoundation.framework in Frameworks */,
@@ -343,6 +346,7 @@
 		942AC64516E7F6820062CA8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6689B98B19B0D17500970387 /* AudioToolbox.framework */,
 				6689B98619A4D38800970387 /* RMCore.framework */,
 				6689B98419A4D35700970387 /* RMCharacter.framework */,
 				6625DC6E1960162700321DA4 /* AVFoundation.framework */,

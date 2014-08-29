@@ -6,7 +6,18 @@
     <script src="jquery-1.11.1.min.js"></script>
     <script src="jquery.mobile-1.4.3.min.js"></script>
     <link rel="stylesheet" href="jquery.mobile-1.4.3.min.css">
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .ui-icon[class*=" icon-"] {
+        /* Remove the jQuery UI Icon */
+        background: none repeat scroll 0 0 transparent;
+        /* Remove the jQuery UI Text Indent */
+        text-indent: 0;
+        /* Bump it up - jQuery UI is -8px */
+        margin-top: -0.5em;
+        }
+    </style>
 </head>
 <body>
     <div data-role="page">
@@ -14,15 +25,16 @@
             <h1>Romocon</h1>
         </div>
         <div role="main" class="ui-content">
-            <button class="ui-btn ui-icon-arrow-u ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/forward');return false;">forward</button>
-            <button class="ui-btn ui-icon-arrow-r ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/right');return false;">right</button>
-            <button class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/left');return false;">left</button>
-            <button class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/backward');return false;">backward</button>
-            <button class="ui-btn ui-icon-carat-u ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/up');return false;">up</button>
-            <button class="ui-btn ui-icon-carat-d ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/down');return false;">down</button>
-            <button class="ui-btn ui-icon-camera ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/takePhoto');return false;">takePhoto</button>
-            <button class="ui-btn ui-icon-eye ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/turnLightOn');return false;">turnLightOn</button>
-            <button class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow ui-corner-all" onclick="$.get('/turnLightOff');return false;">turnLightOff</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/forward');return false;"><i class="fa fa-angle-up"></i> forward</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/right');return false;"><i class="fa fa-angle-right"></i> right</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/left');return false;"><i class="fa fa-angle-left"></i> left</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/backward');return false;"><i class="fa fa-angle-down"></i> backward</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/up');return false;"><i class="fa fa-level-up"></i> up</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/down');return false;"><i class="fa fa-level-down"></i> down</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/takePhoto');return false;"><i class="fa fa-camera-retro"></i> takePhoto</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/turnLightOn');return false;"><i class="fa fa-eye"></i> turnLightOn</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/turnLightOff');return false;"><i class="fa fa-eye-slash"></i> turnLightOff</button>
+            <button class="ui-btn ui-shadow ui-corner-all" onclick="$.get('/vibrate');return false;"><i class="fa fa-bell-slash"></i> vibrate</button>
         </div>
     </div>
 </body>
