@@ -4,7 +4,6 @@
 //
 
 #import "ViewController.h"
-#import "iConsole.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
 
@@ -179,8 +178,6 @@
     // If Romo3 is driving, let's stop driving
     BOOL RomoIsDriving = (self.Romo3.leftDriveMotor.powerLevel != 0) || (self.Romo3.rightDriveMotor.powerLevel != 0);
     if (!RomoIsDriving) {
-        [iConsole log:@"forward"];
-
         // Change Romo's LED to pulse
         [self.Romo3.LEDs pulseWithPeriod:1.0 direction:RMCoreLEDPulseDirectionUpAndDown];
         
@@ -201,8 +198,6 @@
     // If Romo3 is driving, let's stop driving
     BOOL RomoIsDriving = (self.Romo3.leftDriveMotor.powerLevel != 0) || (self.Romo3.rightDriveMotor.powerLevel != 0);
     if (!RomoIsDriving) {
-        [iConsole log:@"backward"];
-        
         // Change Romo's LED to pulse
         [self.Romo3.LEDs pulseWithPeriod:1.0 direction:RMCoreLEDPulseDirectionUpAndDown];
         
@@ -219,8 +214,6 @@
 }
 
 - (void)stop {
-    [iConsole log:@"stop"];
-
     // If Romo3 is driving, let's stop driving
     BOOL RomoIsDriving = (self.Romo3.leftDriveMotor.powerLevel != 0) || (self.Romo3.rightDriveMotor.powerLevel != 0);
     if (RomoIsDriving) {
@@ -275,8 +268,6 @@
     // If Romo3 is driving, let's stop driving
     BOOL RomoIsDriving = (self.Romo3.leftDriveMotor.powerLevel != 0) || (self.Romo3.rightDriveMotor.powerLevel != 0);
     if (!RomoIsDriving) {
-        [iConsole log:@"right"];
-        
         float floatAngle = [angle floatValue] * -1;
         float radius = 0;
         
@@ -290,8 +281,6 @@
     // If Romo3 is driving, let's stop driving
     BOOL RomoIsDriving = (self.Romo3.leftDriveMotor.powerLevel != 0) || (self.Romo3.rightDriveMotor.powerLevel != 0);
     if (!RomoIsDriving) {
-        [iConsole log:@"left"];
-        
         float floatAngle = [angle floatValue];
         float radius = 0;
         

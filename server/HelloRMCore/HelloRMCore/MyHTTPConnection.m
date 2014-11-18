@@ -1,13 +1,11 @@
 #import "MyHTTPConnection.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "iConsole.h"
 
 @implementation MyHTTPConnection
 
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
-    [iConsole log:path];
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSArray *segments = [path componentsSeparatedByString:@"/"];

@@ -7,7 +7,6 @@
 #import "ViewController.h"
 #import "HTTPServer.h"
 #import "MyHTTPConnection.h"
-#import "iConsole.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
@@ -24,13 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-#ifdef DEBUG
-    self.window = [[iConsoleWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [iConsole sharedConsole].deviceShakeToShow = YES;
-#else
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-#endif
 
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];

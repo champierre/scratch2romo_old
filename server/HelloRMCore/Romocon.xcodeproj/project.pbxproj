@@ -44,7 +44,6 @@
 		66BA9451195EFDB00084B0F7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA93E0195EF0510084B0F7 /* CFNetwork.framework */; };
 		66BA9452195EFE2B0084B0F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66BA93E2195EF0610084B0F7 /* Security.framework */; };
 		66BA9455195F04C50084B0F7 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA9454195F04C50084B0F7 /* MyHTTPConnection.m */; };
-		66BA945A195FF4CB0084B0F7 /* iConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA9459195FF4CB0084B0F7 /* iConsole.m */; };
 		66BA945E195FF5BC0084B0F7 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BA945D195FF5BC0084B0F7 /* GTMStackTrace.m */; };
 		942AC64716E7F6820062CA8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942AC64616E7F6820062CA8A /* UIKit.framework */; };
 		942AC64916E7F6820062CA8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942AC64816E7F6820062CA8A /* Foundation.framework */; };
@@ -127,8 +126,6 @@
 		66BA9445195EF9070084B0F7 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		66BA9453195F04C50084B0F7 /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
 		66BA9454195F04C50084B0F7 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
-		66BA9458195FF4CB0084B0F7 /* iConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iConsole.h; sourceTree = "<group>"; };
-		66BA9459195FF4CB0084B0F7 /* iConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iConsole.m; sourceTree = "<group>"; };
 		66BA945C195FF5BC0084B0F7 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
 		66BA945D195FF5BC0084B0F7 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
 		942AC64316E7F6820062CA8A /* Romocon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Romocon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,19 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				66BA945B195FF5BC0084B0F7 /* GTM */,
-				66BA9457195FF4CB0084B0F7 /* iConsole */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		66BA9457195FF4CB0084B0F7 /* iConsole */ = {
-			isa = PBXGroup;
-			children = (
-				66BA9458195FF4CB0084B0F7 /* iConsole.h */,
-				66BA9459195FF4CB0084B0F7 /* iConsole.m */,
-			);
-			name = iConsole;
-			path = Libraries/iConsole;
 			sourceTree = "<group>";
 		};
 		66BA945B195FF5BC0084B0F7 /* GTM */ = {
@@ -471,7 +457,6 @@
 				66BA944B195EF9070084B0F7 /* DDFileLogger.m in Sources */,
 				66BA945E195FF5BC0084B0F7 /* GTMStackTrace.m in Sources */,
 				66BA942F195EF8AB0084B0F7 /* WebSocket.m in Sources */,
-				66BA945A195FF4CB0084B0F7 /* iConsole.m in Sources */,
 				942AC65316E7F6820062CA8A /* main.m in Sources */,
 				66BA9428195EF8AB0084B0F7 /* MultipartMessageHeaderField.m in Sources */,
 				66BA9424195EF8AB0084B0F7 /* HTTPMessage.m in Sources */,
